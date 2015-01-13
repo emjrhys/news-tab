@@ -2,12 +2,6 @@ $(document).ready(function() {
     // https://news.google.com/news?pz=1&cf=all&topic=w&output=rss
     var FEED_URL = "https://news.google.com/news?output=rss";
     
-//    $(function() {
-//        $('#news article').each(function(i) {
-//            $(this).delay((i++) * 500).fadeTo(1000, 1); 
-//        });
-//    });
-    
     function getPublishedDate(e) {
         var currTime = new Date();
         var pubDate = new Date(e.publishedDate);
@@ -53,6 +47,10 @@ $(document).ready(function() {
                         ar.append('<img src="https:' + imgSrc + '">');
                     
                     $('#news').append(ar);
+                });
+                
+                $('#news a').each(function(i) {
+                    $(this).delay((i++) * 50).fadeTo(400, 1); 
                 });
             }
         }
