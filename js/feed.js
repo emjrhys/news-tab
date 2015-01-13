@@ -49,9 +49,11 @@ $(document).ready(function() {
                     $('#news').append(ar);
                 });
                 
-                $('#news a').each(function(i) {
-                    $(this).delay((i++) * 50).fadeTo(400, 1); 
-                });
+                setTimeout(function() {
+                    $('#news a').each(function(i) {
+                        $(this).delay((i++) * 50).fadeTo(400, 1); 
+                    });
+                }, 100);
             }
         }
     });
