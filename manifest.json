@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+
+  "name": "News Tab",
+  "description": "Display top news stories on your new tab page",
+  "version": "1.0",
+
+  "chrome_url_overrides": {
+    "newtab": "news.html"
+  },
+    
+  "content_security_policy": "img-src 'self' https://*.gstatic.com; script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+}
