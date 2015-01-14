@@ -19,9 +19,38 @@ $(document).ready(function() {
     var DEFAULT_URL = "https://news.google.com/news?output=rss";
     var BG_COUNT = 10;
     
+    function convertISOToDate(dateString) {
+        var ISO_8601_re = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.(\d{3}))?(Z|[\+-]\d{2}(?::\d{2})?)$/,
+            m = dateString.match(ISO_8601_re);
+
+        var year = +m[1],
+            month = +m[2],
+            dayOfMonth = +m[3],
+            hour = +m[4],
+            minute = +m[5],
+            second = +m[6],
+            ms = +m[7], // +'' === 0
+            timezone = m[8];
+
+        if (timezone === 'Z') timezone = 0;
+        else timezone = timezone.split(':'), timezone = +(timezone[0][0]+'1') * (60*(+timezone[0].slice(1)) + (+timezone[1] || 0));
+        // timezone is now minutes
+
+        // your prefered way to construct
+        var myDate = new Date();
+        myDate.setUTCFullYear(year);
+        myDate.setUTCMonth(month - 1);
+        myDate.setUTCDate(dayOfMonth);
+        myDate.setUTCHours(hour);
+        myDate.setUTCMinutes(minute + timezone); // timezone offset set here, after hours
+        myDate.setUTCSeconds(second);
+        myDate.setUTCMilliseconds(ms);
+    }
+    
     function getPublishedDate(e) {
+        var pubDate = convertISOToDate(e.created_date);
+        console.log(pubDate);
         var currTime = new Date();
-        var pubDate = new Date(e.publishedDate);
         
         var str;
         
@@ -53,6 +82,56 @@ $(document).ready(function() {
         $('.background-image').css('background-image', 'url(/backgrounds/' + n + '.jpg)');
     }
     
+    $.ajax({
+        type: 'GET',
+        url      : 'https://api.nytimes.com/svc/topstories/v1/home.json?api-key=23bf4766a699334df3eb41b9fb772ff7:19:67768797',
+        dataType : 'json',
+        success  : function (data) {
+            console.log(data);
+            if (data.results) {
+                $.each(data.results, function (i, e) {
+//                    var date = getPublishedDate(e);
+                    var ar = $('<a class="item"></a>')
+                        .attr('href', e.url);
+                    
+                    if (e.multimedia) {
+                        var url = e.multimedia.slice(-1)[0].url;
+                        ar.append('<img src="' + url + '">');
+                    } else {
+                        ar.addClass('noimage');
+                    }
+                    
+                    var text = $('<article></article>')
+                        .append('<h3>' + e.title + '</h3>')
+                        .append('<p>' + e.abstract + '</h3>');
+                    
+                    ar.append(text);
+                    $('#news').append(ar);
+                });
+                
+                $('#news').imagesLoaded(function() {
+                    $('#news').masonry({
+                        transitionDuration: 0,
+                        gutter: 20,
+                        itemSelector: '.item'
+                    });
+                    
+                    $('#news a').each(function(i) {
+                        $(this).delay((i++) * 50).fadeTo(400, 1); 
+                    });
+                });
+            }
+        }
+    });
+    
+    function init() {
+        chooseRandomBackground();
+    }
+    
+    init();
+});
+
+/* FOR USE WITH GOOGLE NEWS
     $.ajax({
         type: 'GET',
         url      : 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(getFeedURL(topics.TECHNOLOGY)),
@@ -90,11 +169,5 @@ $(document).ready(function() {
             }
         }
     });
-    
-    function init() {
-        chooseRandomBackground();
-    }
-    
-    init();
-});
+*/
 

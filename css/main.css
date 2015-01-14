@@ -166,152 +166,110 @@ table {
 /**
  * Apply a clearfix to an element.
  */
-/* line 11, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+/* line 13, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
 * {
   padding: 0;
   margin: 0; }
 
-/* line 16, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+/* line 18, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
 body {
-  font-family: sans-serif;
-  overflow: hidden; }
+  font-family: 'Raleway'; }
 
-/* line 21, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+/* line 22, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
 .background-image {
   position: fixed;
-  height: 110%;
-  width: 110%;
-  top: -5%;
-  left: -5%;
+  height: 120%;
+  width: 120%;
+  top: -10%;
+  left: -10%;
   z-index: -1;
-  background: url(/backgrounds/1.jpg) no-repeat center center;
+  background-image: url(/backgrounds/1.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
   overflow: hidden; }
-  /* line 33, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+  /* line 36, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
   .background-image.blur {
     -webkit-filter: blur(10px);
     filter: blur(10px); }
 
-/* line 38, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+@media only screen and (max-width: 2100px) {
+  .item {
+    width: calc(16.66666% - 16px); } }
+@media only screen and (max-width: 1800px) {
+  .item {
+    width: calc(20% - 16px); } }
+@media only screen and (max-width: 1500px) {
+  .item {
+    width: calc(25% - 16px); } }
+@media only screen and (max-width: 1100px) {
+  .item {
+    width: calc(33.33333% - 16px); } }
+@media only screen and (max-width: 800px) {
+  .item {
+    width: calc(50% - 16px); } }
+@media only screen and (max-width: 500px) {
+  .item {
+    width: 100%; } }
+
+/* line 67, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
 .container {
   position: absolute;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5); }
-  /* line 44, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+  background-color: rgba(152, 152, 152, 0.5); }
+  /* line 73, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
   .container h1 {
     text-transform: uppercase;
     font-size: 24px;
-    margin: 20px 0 0 20px; }
-  /* line 50, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #eee;
+    margin: 20px 0 6px 60px;
+    position: fixed;
+    z-index: 2; }
+  /* line 83, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
   .container #news {
-    margin: 10px 0 0 60px; }
-    /* line 53, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+    margin: 54px 60px 0; }
+    /* line 86, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
     .container #news a {
-      display: block;
+      margin: 10px 0;
       box-sizing: border-box;
-      padding: 12px;
-      *zoom: 1;
-      float: left;
-      clear: none;
-      text-align: inherit;
-      width: 33.33333%;
-      margin-left: 0%;
-      margin-right: 0%;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
       text-decoration: none;
       color: #111;
       transition: background-color 0.2s ease-in-out;
       cursor: pointer;
       opacity: 0; }
-      /* line 344, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-      .container #news a:before, .container #news a:after {
-        content: '';
-        display: table; }
-      /* line 349, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-      .container #news a:after {
-        clear: both; }
-      /* line 139, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-      .container #news a:nth-of-type(3n) {
-        float: right; }
-      /* line 142, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-      .container #news a:nth-of-type(3n+1) {
-        clear: both; }
-      @media only screen and (max-width: 1500px) {
-        .container #news a {
-          *zoom: 1;
-          float: left;
-          clear: none;
-          text-align: inherit;
-          width: 50%;
-          margin-left: 0%;
-          margin-right: 0%; }
-          /* line 344, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-          .container #news a:before, .container #news a:after {
-            content: '';
-            display: table; }
-          /* line 349, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-          .container #news a:after {
-            clear: both; }
-          /* line 139, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-          .container #news a:nth-of-type(2n) {
-            float: right; }
-          /* line 142, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-          .container #news a:nth-of-type(2n+1) {
-            clear: both; }
-          /* line 148, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-          .container #news a:nth-of-type(3n) {
-            float: left; }
-          /* line 151, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-          .container #news a:nth-of-type(3n+1) {
-            clear: none; } }
-      @media only screen and (max-width: 850px) {
-        .container #news a {
-          *zoom: 1;
-          float: left;
-          clear: none;
-          text-align: inherit;
-          width: 100%;
-          margin-left: 0%;
-          margin-right: 0%; }
-          /* line 344, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-          .container #news a:before, .container #news a:after {
-            content: '';
-            display: table; }
-          /* line 349, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-          .container #news a:after {
-            clear: both; }
-          /* line 139, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-          .container #news a:nth-of-type(1n) {
-            float: right; }
-          /* line 142, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-          .container #news a:nth-of-type(1n+1) {
-            clear: both; }
-          /* line 148, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-          .container #news a:nth-of-type(2n) {
-            float: left; }
-          /* line 151, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-          .container #news a:nth-of-type(2n+1) {
-            clear: none; } }
-      /* line 78, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
-      .container #news a h3 {
-        font-size: 18px;
-        margin-bottom: 14px; }
-      /* line 83, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
-      .container #news a span {
-        display: block;
-        margin-top: 10px;
-        color: #333;
-        font-size: 12px; }
-      /* line 90, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
-      .container #news a p {
-        color: #222;
-        font-size: 14px; }
-        /* line 94, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
-        .container #news a p img {
-          float: left;
-          margin: 0 24px 10px 1px; }
-      /* line 100, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+      /* line 101, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+      .container #news a img {
+        width: 100%; }
+      /* line 105, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+      .container #news a article {
+        padding: 12px; }
+        /* line 108, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+        .container #news a article h3 {
+          font-size: 14px;
+          font-weight: 700;
+          margin-bottom: 14px; }
+        /* line 113, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+        .container #news a article span {
+          display: block;
+          margin-top: 10px;
+          color: #333;
+          font-size: 12px; }
+        /* line 120, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+        .container #news a article p {
+          color: #222;
+          font-size: 13px;
+          line-height: 16px; }
+      /* line 127, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+      .container #news a.noimage {
+        border-radius: 5px; }
+      /* line 131, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
       .container #news a:hover {
-        background-color: rgba(255, 255, 255, 0.3); }
+        background-color: rgba(255, 255, 255, 0.9); }
 
 /*# sourceMappingURL=main.css.map */

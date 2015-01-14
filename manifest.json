@@ -9,5 +9,5 @@
     "newtab": "news.html"
   },
     
-  "content_security_policy": "img-src 'self' https://*.gstatic.com; script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+  "content_security_policy": "img-src 'self' http://*.nyt.com; script-src 'self' https://ajax.googleapis.com https://api.nytimes.com; object-src 'self'"
 }
