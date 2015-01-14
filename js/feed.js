@@ -37,14 +37,19 @@ $(document).ready(function() {
                     var c = $(e.content);
                     var imgSrc = c.find('img').attr('src');
                     
+                    var snippet = c.find('font[color="#6f6f6f"]:not([size])').parent().parent().next().next().text();
+                    
                     var ar = $('<a></a>')
                         .attr('href', e.link)
-                        .append('<h3>' + e.title + '</h3')
-                        .append('<span class="date">' + d + '</span>');
-//                        .append('<p>' + e.contentSnippet + '</p>')
+                        .append('<h3>' + e.title + '</h3');
+                        
                     
                     if (imgSrc != undefined)
-                        ar.append('<img src="https:' + imgSrc + '">');
+                        ar.append('<p><img src="https:' + imgSrc + '"> ' + snippet + '</p>');
+                    else
+                        ar.append('<p>' + snippet + '</p>');
+                    
+                    ar.append('<span class="date">' + d + '</span>')
                     
                     $('#news').append(ar);
                 });

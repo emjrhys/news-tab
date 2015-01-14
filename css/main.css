@@ -173,9 +173,10 @@ table {
 
 /* line 16, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
 body {
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  overflow: hidden; }
 
-/* line 20, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+/* line 21, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
 .background-image {
   position: fixed;
   height: 110%;
@@ -186,21 +187,26 @@ body {
   background: url(/backgrounds/1.jpg) no-repeat center center;
   background-size: cover;
   overflow: hidden; }
-  /* line 32, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+  /* line 33, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
   .background-image.blur {
     -webkit-filter: blur(10px);
     filter: blur(10px); }
 
-/* line 37, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+/* line 38, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
 .container {
+  position: absolute;
   height: 100%;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.3); }
-  /* line 42, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+  /* line 44, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+  .container h1 {
+    text-transform: uppercase;
+    font-size: 24px;
+    margin: 10px 0 0 10px; }
+  /* line 50, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
   .container #news {
-    margin-left: 60px;
-    margin-top: 40px; }
-    /* line 46, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+    margin: 40px 0 0 60px; }
+    /* line 53, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
     .container #news a {
       display: block;
       box-sizing: border-box;
@@ -209,7 +215,7 @@ body {
       float: left;
       clear: none;
       text-align: inherit;
-      width: 33.33333%;
+      width: 50%;
       margin-left: 0%;
       margin-right: 0%;
       height: 150px;
@@ -226,23 +232,29 @@ body {
       .container #news a:after {
         clear: both; }
       /* line 139, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-      .container #news a:nth-of-type(3n) {
+      .container #news a:nth-of-type(2n) {
         float: right; }
       /* line 142, /Users/noah/Dropbox/programming/projects/news-tab/css/jeet/_grid */
-      .container #news a:nth-of-type(3n+1) {
+      .container #news a:nth-of-type(2n+1) {
         clear: both; }
-      /* line 62, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+      /* line 69, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
       .container #news a h3 {
         margin-bottom: 10px; }
-      /* line 66, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+      /* line 73, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
       .container #news a span {
-        margin-left: 10px;
+        display: block;
+        margin-top: 10px;
         color: #333;
         font-size: 12px; }
-      /* line 72, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
-      .container #news a img {
-        float: left; }
-      /* line 76, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+      /* line 80, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+      .container #news a p {
+        color: #222;
+        font-size: 14px; }
+        /* line 84, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+        .container #news a p img {
+          float: left;
+          margin: 0 10px 0 1px; }
+      /* line 90, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
       .container #news a:hover {
         background-color: rgba(255, 255, 255, 0.5); }
 
