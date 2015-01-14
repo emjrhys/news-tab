@@ -1,6 +1,23 @@
+/* TODO: 
+    add support for queries, country, and language
+*/
+
 $(document).ready(function() {
-    // https://news.google.com/news?pz=1&cf=all&topic=w&output=rss
-    var FEED_URL = "https://news.google.com/news?output=rss";
+    var topics = {
+        US: 'n',
+        WORLD: 'w',
+        ENTERTAINMENT: 'e',
+        SPORTS: 's',
+        SPOTLIGHT: 'ir',
+        BUSINESS: 'b',
+        HEALTH: 'm',
+        TECHNOLOGY: 'tc',
+        SCIENCE: 'snc',
+        SCI_TECH: 't'
+    };
+    
+    var DEFAULT_URL = "https://news.google.com/news?output=rss";
+    var BG_COUNT = 10;
     
     function getPublishedDate(e) {
         var currTime = new Date();
@@ -25,9 +42,20 @@ $(document).ready(function() {
         return str;
     }
     
+    function getFeedURL(topic) {
+        var url = "https://news.google.com/news?pz=1&cf=all&topic=" + topic + "&output=rss";
+        
+        return url;
+    }
+    
+    function chooseRandomBackground() {
+        var n = Math.floor(Math.random() * BG_COUNT) + 1;
+        $('.background-image').css('background-image', 'url(/backgrounds/' + n + '.jpg)');
+    }
+    
     $.ajax({
         type: 'GET',
-        url      : 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(FEED_URL),
+        url      : 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(getFeedURL(topics.TECHNOLOGY)),
         dataType : 'json',
         success  : function (data) {
             if (data.responseData.feed && data.responseData.feed.entries) {
@@ -62,17 +90,11 @@ $(document).ready(function() {
             }
         }
     });
+    
+    function init() {
+        chooseRandomBackground();
+    }
+    
+    init();
 });
 
-/*  topics:
-    n - us?
-    w - world
-    e - entertainment
-    s - sports
-    ir - spotlight
-    b - business
-    m - health
-    tc - technology
-    snc - science 
-    t - sci/tech
-*/
