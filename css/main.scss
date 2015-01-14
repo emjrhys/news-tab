@@ -1,7 +1,14 @@
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
 
-
+@font-face {
+  font-family: 'Corbel';
+  src: url('/css/typefaces/Corbel.eot'); /* IE9 Compat Modes */
+  src: url('/css/typefaces/Corbel.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/css/typefaces/Corbel.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/css/typefaces/Corbel.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/css/typefaces/Corbel.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
 
 @import 'jeet/index';
 
@@ -70,14 +77,18 @@ body {
     width: 100%;
     background-color: rgba(152, 152, 152, 0.5);
     
-    h1 {
-        text: { transform: uppercase; }
-        font: { size: 24px; weight: 600; }
-        letter-spacing: 1px;
-        color: #eee;
-        margin: 20px 0 6px 60px;
+    nav {
+        height: 54px;
+        padding: 20px 60px 0;
         position: fixed;
         z-index: 2;
+        
+        h1 {
+            text: { transform: uppercase; }
+            font: { size: 24px; weight: 600; }
+            letter-spacing: 1px;
+            color: #eee;
+        }
     }
     
     #news {
@@ -87,8 +98,8 @@ body {
             margin: 10px 0;
             box-sizing: border-box;
             background-color: rgba(255, 255, 255, .6);
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
             
             text: { decoration: none; }
             color: #111;
@@ -107,6 +118,7 @@ body {
                 
                 h3 {
                     font: { size: 14px; weight: 700; }
+                    line-height: 17px;
                     margin-bottom: 14px;
                 }
 
@@ -119,13 +131,13 @@ body {
 
                 p {
                     color: #222;
-                    font-size: 13px;
-                    line-height: 16px;
+                    font: { size: 13px; family: 'Corbel'; }
+                    line-height: 15px;
                 }
             }
             
             &.noimage {
-                border-radius: 5px;   
+                border-radius: 6px;   
             }
             
             &:hover {

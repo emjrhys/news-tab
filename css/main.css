@@ -33,6 +33,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@font-face {
+  font-family: 'Corbel';
+  src: url('/css/typefaces/Corbel.eot');
+  /* IE9 Compat Modes */
+  src: url('/css/typefaces/Corbel.eot?#iefix') format('embedded-opentype'), url('/css/typefaces/Corbel.woff2') format('woff2'), url('/css/typefaces/Corbel.woff') format('woff'), url('/css/typefaces/Corbel.ttf') format('truetype');
+  /* Safari, Android, iOS */ }
+
 /*  Syntax Quick Reference
   --------------------------
   column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
@@ -166,16 +173,16 @@ table {
 /**
  * Apply a clearfix to an element.
  */
-/* line 13, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+/* line 20, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
 * {
   padding: 0;
   margin: 0; }
 
-/* line 18, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+/* line 25, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
 body {
   font-family: 'Raleway'; }
 
-/* line 22, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+/* line 29, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
 .background-image {
   position: fixed;
   height: 120%;
@@ -188,7 +195,7 @@ body {
   background-position: center center;
   background-size: cover;
   overflow: hidden; }
-  /* line 36, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+  /* line 43, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
   .background-image.blur {
     -webkit-filter: blur(10px);
     filter: blur(10px); }
@@ -212,63 +219,68 @@ body {
   .item {
     width: 100%; } }
 
-/* line 67, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+/* line 74, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
 .container {
   position: absolute;
   min-height: 100%;
   width: 100%;
   background-color: rgba(152, 152, 152, 0.5); }
-  /* line 73, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
-  .container h1 {
-    text-transform: uppercase;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: #eee;
-    margin: 20px 0 6px 60px;
+  /* line 80, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+  .container nav {
+    height: 54px;
+    padding: 20px 60px 0;
     position: fixed;
     z-index: 2; }
-  /* line 83, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+    /* line 86, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+    .container nav h1 {
+      text-transform: uppercase;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #eee; }
+  /* line 94, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
   .container #news {
     margin: 54px 60px 0; }
-    /* line 86, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+    /* line 97, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
     .container #news a {
       margin: 10px 0;
       box-sizing: border-box;
       background-color: rgba(255, 255, 255, 0.6);
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
       text-decoration: none;
       color: #111;
       transition: background-color 0.2s ease-in-out;
       cursor: pointer;
       opacity: 0; }
-      /* line 101, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+      /* line 112, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
       .container #news a img {
         width: 100%; }
-      /* line 105, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+      /* line 116, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
       .container #news a article {
         padding: 12px; }
-        /* line 108, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+        /* line 119, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
         .container #news a article h3 {
           font-size: 14px;
           font-weight: 700;
+          line-height: 17px;
           margin-bottom: 14px; }
-        /* line 113, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+        /* line 125, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
         .container #news a article span {
           display: block;
           margin-top: 10px;
           color: #333;
           font-size: 12px; }
-        /* line 120, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+        /* line 132, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
         .container #news a article p {
           color: #222;
           font-size: 13px;
-          line-height: 16px; }
-      /* line 127, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+          font-family: 'Corbel';
+          line-height: 15px; }
+      /* line 139, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
       .container #news a.noimage {
-        border-radius: 5px; }
-      /* line 131, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
+        border-radius: 6px; }
+      /* line 143, /Users/noah/Dropbox/programming/projects/news-tab/css/main.scss */
       .container #news a:hover {
         background-color: rgba(255, 255, 255, 0.9); }
 
