@@ -79,7 +79,7 @@ $(document).ready(function() {
     
     function chooseRandomBackground() {
         var n = Math.floor(Math.random() * BG_COUNT) + 1;
-        $('.background-image').css('background-image', 'url(/backgrounds/' + n + '.jpg)');
+        $('.background-image, .bg').css('background-image', 'url(/backgrounds/' + n + '.jpg)');
     }
     
     $.ajax({
